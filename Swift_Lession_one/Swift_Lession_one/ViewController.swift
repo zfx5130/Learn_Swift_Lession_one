@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     var displayZero: Bool = false;
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle! //这里!类似强制转换的意思，加!类型有optional到对应的string类型，
-        print("digit", digit) //打印方式， swift中一般不用写分号，在语句结尾。
         if displayZero {
             display.text = display.text! + digit
         } else {
@@ -25,6 +24,26 @@ class ViewController: UIViewController {
         }
     }
     
+    var allNumber = [Double]()
+    
+    
+    @IBAction func enter() {
+        displayZero = false
+        allNumber.append(displayValue)
+        print("\(allNumber)")
+    }
+    
+    var displayValue: Double {
+        get {
+            print("adf++++++afadsfas")
+            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+        }
+        set {
+            print("adfafadsfas")
+            display.text = "\(newValue)"
+            displayZero = false
+        }
+    }
     
 }
 
