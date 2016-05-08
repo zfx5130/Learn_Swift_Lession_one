@@ -45,5 +45,34 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func opreate(sender: UIButton) {
+        let opreateValue = sender.currentTitle!
+        if displayZero {
+            enter()
+        }
+        switch opreateValue {
+        case "*": preformOperate {$0 * $1}
+        case "/": preformOperate {$1 / $0}
+        case "+": preformOperate {$0 + $1}
+        case "-": preformOperate {$1 - $0}
+        case "√": preformOperateSqrt { sqrt($0) }
+        default: break
+        }
+        
+    }
+    
+    func preformOperate(opreation: (Double, Double) -> Double) {
+        if allNumber.count >= 2 {
+            displayValue = opreation(allNumber.removeLast(), allNumber.removeLast())
+            enter()
+        }
+    }
+    
+    func preformOperateSqrt(opreation: Double -> Double) {
+        if allNumber.count >= 1 {
+            displayValue = opreation(allNumber.removeLast())
+            enter()
+        }
+    }
 }
 
