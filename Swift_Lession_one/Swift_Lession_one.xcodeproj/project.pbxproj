@@ -14,6 +14,7 @@
 		D71A59431CC7E88200DC4CAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71A59411CC7E88200DC4CAA /* LaunchScreen.storyboard */; };
 		D71A594E1CC7E88200DC4CAA /* Swift_Lession_oneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A594D1CC7E88200DC4CAA /* Swift_Lession_oneTests.swift */; };
 		D71A59591CC7E88200DC4CAA /* Swift_Lession_oneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A59581CC7E88200DC4CAA /* Swift_Lession_oneUITests.swift */; };
+		D799BA9D1CE8BE0300F31BCA /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799BA9C1CE8BE0300F31BCA /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D71A59541CC7E88200DC4CAA /* Swift_Lession_oneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift_Lession_oneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71A59581CC7E88200DC4CAA /* Swift_Lession_oneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Lession_oneUITests.swift; sourceTree = "<group>"; };
 		D71A595A1CC7E88200DC4CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D799BA9C1CE8BE0300F31BCA /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				D71A593A1CC7E88200DC4CAA /* ViewController.swift */,
 				D71A593C1CC7E88200DC4CAA /* Main.storyboard */,
+				D799BA9C1CE8BE0300F31BCA /* CalculatorBrain.swift */,
 			);
 			path = Swift_Lession_one;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D799BA9D1CE8BE0300F31BCA /* CalculatorBrain.swift in Sources */,
 				D71A593B1CC7E88200DC4CAA /* ViewController.swift in Sources */,
 				D71A59391CC7E88200DC4CAA /* AppDelegate.swift in Sources */,
 			);
