@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
+    var brain = CalculatorBrain()
     
     //var 变量  let 常量
     var displayZero: Bool = false;
@@ -24,55 +25,39 @@ class ViewController: UIViewController {
         }
     }
     
-    var allNumber = [Double]()
-    
     
     @IBAction func enter() {
         displayZero = false
-        allNumber.append(displayValue)
-        print("\(allNumber)")
+        if let result =  brain.pushOperand(displayValue) {
+            displayValue = result
+        } else {
+            displayValue = 0
+        }
     }
     
     var displayValue: Double {
         get {
-            print("adf++++++afadsfas")
             return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
         }
         set {
-            print("adfafadsfas")
             display.text = "\(newValue)"
             displayZero = false
         }
     }
     
     @IBAction func opreate(sender: UIButton) {
-        let opreateValue = sender.currentTitle!
         if displayZero {
             enter()
         }
-        switch opreateValue {
-        case "*": preformOperate {$0 * $1}
-        case "/": preformOperate {$1 / $0}
-        case "+": preformOperate {$0 + $1}
-        case "-": preformOperate {$1 - $0}
-        case "√": preformOperateSqrt { sqrt($0) }
-        default: break
-        }
-        
-    }
-    
-    func preformOperate(opreation: (Double, Double) -> Double) {
-        if allNumber.count >= 2 {
-            displayValue = opreation(allNumber.removeLast(), allNumber.removeLast())
-            enter()
+  
+        if let operation = sender.currentTitle {
+            if let result = brain.prefoemOperation(operation) {
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
         }
     }
-    
-    func preformOperateSqrt(opreation: Double -> Double) {
-        if allNumber.count >= 1 {
-            displayValue = opreation(allNumber.removeLast())
-            enter()
-        }
-    }
+
 }
 
